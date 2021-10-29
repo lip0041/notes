@@ -1,0 +1,102 @@
+# Site Information
+site_name: lip0041 -- 说服下自己
+site_author: isobung
+
+# Contents
+nav:
+  - 简介:
+    - Getting Started: index.md
+  - Solutions:
+    - Advanced:
+      - A1042: pat/shuffling-machine.md
+      - A1046: pat/shortest-distance.md
+    - mooc:
+      - PA2: thu/proper-rebuild.md
+      - PA1: thu/light-house.md
+  - Notes:
+    - Program Languages: 
+      - C++: cpp/cpp.md
+
+# Theme
+theme:
+  name: material
+  custom_dir: docs/overrides
+  language: en
+  # dark and light mode-switch 
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: deep purple
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  logo: icons/penguin.png
+  features:
+    - content.code.annotate
+    - content.tabs.link
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+# Extensions
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid-experimental
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Customization
+extra:
+  pagetime: 'on'
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/lip0041
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+
