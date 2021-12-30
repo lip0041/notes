@@ -8,8 +8,45 @@ nav:
     - Getting Started: index.md
   - Solutions:
     - Advanced:
-      - A1042: pat/shuffling-machine.md
+      - A1001: pat/ab-format.md
+      - A1002: pat/ab-for-polynomials.md
+      - A1004: pat/counting-leaves.md
+      - A1005: pat/spell-it-right.md
+      - A1006: pat/sign-in-and-sign-out.md
+      - A1009: pat/product-of-polynomials.md
+      - A1011: pat/world-cup-betting.md
+      - A1014: pat/waiting-in-line.md
+      - A1019: pat/general-palindromic-number.md
+      - A1020: pat/tree-traversals.md
+      - A1022: pat/digital-library.md
+      - A1031: pat/hello-world-for-u.md
+      - A1032: pat/sharing.md
+      - A1035: pat/password.md
+      - A1036: pat/boys-vs-girls.md
+      - A1039: pat/course-list-for-student.md
+      - A1042: pat/shuffing-machine.md
       - A1046: pat/shortest-distance.md
+      - A1047: pat/student-list-for-course.md
+      - A1051: pat/pop-sequence.md
+      - A1052: pat/linked-list-sorting.md
+      - A1054: pat/the-dominant-color.md
+      - A1056: pat/mice-and-rice.md
+      - A1060: pat/are-the-equal.md
+      - A1061: pat/dating.md
+      - A1063: pat/set-similarity.md
+      - A1065: pat/ab-and-c-64bit.md
+      - A1071: pat/speech-patterns.md
+      - A1073: pat/scientific-notation.md
+      - A1074: pat/reversing-linked-list.md
+      - A1077: pat/kuchiguse.md
+      - A1082: pat/read-number-in-chinese.md
+      - A1086: pat/tree-traversals-again.md
+      - A1091: pat/acute-stroke.md
+      - A1097: pat/deduplication-on-a-linked-list.md
+      - A1100: pat/mars-numbers.md
+      - A1102: pat/invert-a-binary-tree.md
+      - A1103: pat/integer-factorization.md
+      - A1109: pat/group-photo.md
     - mooc:
       - PA2: thu/proper-rebuild.md
       - PA1: thu/light-house.md
