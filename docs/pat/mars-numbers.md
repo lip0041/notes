@@ -11,6 +11,7 @@
 起初我是打算输入一个处理一个的，但下手之前看到了《算法笔记》中的思路，直接用`map`做（因为数据量也不大）完全可以预处理，然后后面直接查询
 
 ## AC代码
+
 ```cpp linenums="1"
 #include <iostream>
 #include <vector>

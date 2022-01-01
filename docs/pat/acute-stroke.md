@@ -11,6 +11,7 @@
 理解了题意之后，就知道这个题可以采用`BFS`遍历每个连通域，并将每个连通域中1的个数大于等于`T`的个数记下来，最后输出即可
 
 ## AC代码
+
 ```cpp linenums="1"
 #include <iostream>
 #include <queue>

@@ -18,6 +18,7 @@
     cout << setiosflags(ios::fixed) << setprecision(n); // n为要求的精度
 
 ## AC代码
+
 ```cpp linenums="1"
 #include <iostream>
 #include <vector>

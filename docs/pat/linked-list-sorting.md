@@ -10,6 +10,7 @@
 调用`sort`函数，注意，题目中给的节点不一定都在链表上，且不一定给定的节点一定会组成一个链表，需要特殊判断
 
 ## AC代码
+
 ```cpp linenums="1"
 #include <iostream>
 #include <vector>

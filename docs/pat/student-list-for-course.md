@@ -23,6 +23,7 @@
 所以，最终结论是，这道题，`cout`使用`\n`输出换行一样也能过！！！
 
 ## AC代码
+
 ```cpp linenums="1"
 #include <iostream>
 #include <vector>

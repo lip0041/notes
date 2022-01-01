@@ -9,6 +9,7 @@
 用一个`char`存放结果的字符，重新回顾一下`cout`的精度控制
 
 ## AC代码
+
 ```cpp linenums="1"
 #include <iostream>
 #include <vector>

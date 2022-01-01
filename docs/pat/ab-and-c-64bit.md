@@ -21,6 +21,7 @@
 [[C++]--PAT-A1065 & cin与scanf](https://www.lip0041.top/2021/02/cpp-pat-a1065/ "[C++]--PAT-A1065 & cin与scanf")
 
 ## AC代码
+
 ```cpp linenums="1"
 #include <iostream>
 #include <cstdio>

@@ -11,6 +11,7 @@
 关键在于构建二叉树，我还是习惯于用动态形式的树，所以详细看代码吧，很常规
 
 ## AC代码
+
 ```cpp linenums="1"
 #include <iostream>
 #include <vector>

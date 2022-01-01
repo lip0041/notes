@@ -11,6 +11,7 @@
 中序遍历可以确定左右子树，后续遍历可以确定子树的根，先构造出二叉树，然后做层序遍历即可
 
 ## AC代码
+
 ```cpp linenums="1"
 #include <iostream>
 #include <vector>

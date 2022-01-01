@@ -10,6 +10,7 @@ D进制问题+判断回文数
 很常规，只是两个问题结合在一起而已
 
 ## AC代码
+
 ```cpp linenums="1"
 #include <iostream>
 #include <vector>

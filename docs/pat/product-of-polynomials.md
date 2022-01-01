@@ -9,6 +9,7 @@
 一个向量存第一个多项式，后面一个多项式边读边计算即可
 
 ## AC代码
+
 ```cpp linenums="1"
 #include <iostream>
 #include <vector>

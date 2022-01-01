@@ -9,6 +9,7 @@
 输入时即用`earliest`和`latest`处理保存当前已经输入的人中的最早和最晚
 
 ## AC代码
+
 ```cpp linenums="1"
 #include <iostream>
 using namespace std;

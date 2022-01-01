@@ -11,7 +11,8 @@
 先遍历一个单词，将其中的字母设为已被访问的状态，然后遍历另一个单词，当碰到已被访问的字母时表明，当前的字母即为所求字母
 
 ## AC代码
-```cpp v
+
+```cpp linenums="1"
 #include <iostream>
 #include <iomanip>
 using namespace std;

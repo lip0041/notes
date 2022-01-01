@@ -13,6 +13,7 @@
 注意最后一排人数，按照N - N / K * (N / K - 1)有问题，因为如5/6会当成0，所以要用求余运算更佳。
 
 # AC代码
+
 ```cpp linenums="1"
 #include <iostream>
 #include <utility>

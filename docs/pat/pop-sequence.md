@@ -10,6 +10,7 @@
 根据输入序列，模拟栈混洗，最终辅助栈空则是正确的
 
 ## AC代码
+
 ```cpp linenums="1"
 #include <stack>
 #include <iostream>

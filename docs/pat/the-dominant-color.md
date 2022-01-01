@@ -11,6 +11,7 @@
 本来可以开辟一个很大的数组，m * n来保存每个可能的值，但是题目中的值范围为[0, 2^24]，过于大了，所以采用`map`映射的办法。
 
 ## AC代码
+
 ```cpp linenums="1"
 #include <iostream>
 #include <map>

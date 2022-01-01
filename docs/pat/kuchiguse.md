@@ -11,6 +11,7 @@
 利用`algorithm`中的`reverse`函数，变为最长公共前缀，中间学习了一下`lambda`表达式
 
 ## AC代码
+
 ```cpp linenums="1"
 #include <iostream>
 #include <vector>

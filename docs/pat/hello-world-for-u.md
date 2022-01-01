@@ -10,6 +10,7 @@
 计算出`n1`、`n2`、`n3`，然后按行输出即可。由`n1 = n3`且不大于`n2`则有`n1 = n3  = (n + 2) / 3`的下整。
 
 ## AC代码
+
 ```cpp linenums="1"
 #include <iostream>
 using namespace std;

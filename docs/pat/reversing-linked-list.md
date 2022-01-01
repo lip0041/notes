@@ -10,6 +10,7 @@
 利用`reverse`函数即可。注意喜欢使用`cout`的，如何控制输出格式，以及用`"\n"`输出换行会减少时间。
 
 ## AC代码
+
 ```cpp linenums="1"
 #include <iostream>
 #include <vector>

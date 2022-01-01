@@ -13,6 +13,7 @@
 由于中文中，有亿、万，在万中又有千、百、十，故每四个一组处理。其中需要特别注意的是空格的输出，先输出空格在输出字符串比较好。
 
 ## AC代码
+
 ```cpp linenums="1"
 #include <iostream>
 #include <vector>

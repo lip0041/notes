@@ -22,6 +22,7 @@
     //后面cout输出的数就保留了n位小数
 
 ## AC代码
+
 ```cpp linenums='1'
 #include <iostream>
 #include <vector>

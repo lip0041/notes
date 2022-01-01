@@ -13,6 +13,7 @@
 只使用`vector`过了测试点4、5没过，不知道怎么解决，后续尝试使用`queue`解决。
 
 ## `vector`代码
+
 ```cpp linenums="1"
 #include <iostream>
 #include <vector>

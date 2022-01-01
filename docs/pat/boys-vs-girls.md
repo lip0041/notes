@@ -9,6 +9,7 @@
 常规，注意判断是否存在最值修改输出格式
 
 ## AC代码
+
 ```cpp linenums="1"
 #include <iostream>
 using namespace std;

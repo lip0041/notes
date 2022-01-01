@@ -10,6 +10,7 @@
 刚开始打算用求余运算做的，草率了，没有考虑到为0时应该输出连续的0，只拿了15分。然后考虑到按照字符串处理，用`to_string`函数，即可，除了最前面的，其他按照3个一输出即可。
 
 ## AC代码
+
 ```cpp linenums="1"
 #include <iostream>
 using namespace std;
