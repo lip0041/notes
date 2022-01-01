@@ -21,35 +21,35 @@
 [[C++]--PAT-A1065 & cin与scanf](https://www.lip0041.top/2021/02/cpp-pat-a1065/ "[C++]--PAT-A1065 & cin与scanf")
 
 ## AC代码
-```cpp
-    #include <iostream>
-    #include <cstdio>
-    using namespace std;
+```cpp linenums="1"
+#include <iostream>
+#include <cstdio>
+using namespace std;
 
-    int main()
-    {
-        int T;
-        cin >> T;
-        for(auto k = 0; k != T; ++k)
-        {
-            long long a, b, c;
-            //cin >> a >> b >> c;
-            scanf("%lld%lld%lld", &a, &b, &c);
-            auto res = a + b;
-            bool flag;
-            if(a > 0 && b > 0 && res < 0)
-                flag = true;
-            else if(a < 0 && b < 0 && res >= 0)
-                flag = false;
-            else if(res > c)
-                flag = true;
-            else 
-                flag = false;
-            if(flag)
-                cout << "Case #" << k+1 << ": true" << endl;
-            else
-                cout << "Case #" << k+1 << ": false" << endl;
-        }
-        return 0;
-    }
-```    
+int main()
+{
+  int T;
+  cin >> T;
+  for(auto k = 0; k != T; ++k)
+  {
+    long long a, b, c;
+    //cin >> a >> b >> c;
+    scanf("%lld%lld%lld", &a, &b, &c);
+    auto res = a + b;
+    bool flag;
+    if(a > 0 && b > 0 && res < 0)
+      flag = true;
+    else if(a < 0 && b < 0 && res >= 0)
+      flag = false;
+    else if(res > c)
+      flag = true;
+    else 
+      flag = false;
+    if(flag)
+      cout << "Case #" << k+1 << ": true" << endl;
+    else
+      cout << "Case #" << k+1 << ": false" << endl;
+  }
+  return 0;
+}
+```

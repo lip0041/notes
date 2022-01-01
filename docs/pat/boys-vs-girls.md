@@ -9,39 +9,39 @@
 常规，注意判断是否存在最值修改输出格式
 
 ## AC代码
-```cpp
-    #include <iostream>
-    using namespace std;
+```cpp linenums="1"
+#include <iostream>
+using namespace std;
 
-    struct Student {
-        string name;
-        string id;
-        int score;
-    }male, female, temp;
+struct Student {
+  string name;
+  string id;
+  int score;
+}male, female, temp;
 
-    int main() {
-        male.score = 101, female.score = -1;
-        int n; char gender;
-        cin >> n;
-        while (n--) {
-            cin >> temp.name >> gender >> temp.id >> temp.score;
-            if (gender == 'M' && temp.score < male.score)
-                swap(male, temp);
-            else if (gender == 'F' && temp.score > female.score)
-                swap(female, temp);
-        }
-        if (female.score == -1)
-            cout << "Absent" << endl;
-        else
-            cout << female.name << " " << female.id << endl;
-        if (male.score == 101)
-            cout << "Absent" << endl;
-        else
-            cout << male.name << " " << male.id << endl;
-        if (female.score == -1 '' male.score == 101)
-            cout << "NA" << endl;
-        else
-            cout << female.score - male.score;
-        return 0;
-    }
+int main() {
+  male.score = 101, female.score = -1;
+  int n; char gender;
+  cin >> n;
+  while (n--) {
+    cin >> temp.name >> gender >> temp.id >> temp.score;
+    if (gender == 'M' && temp.score < male.score)
+      swap(male, temp);
+    else if (gender == 'F' && temp.score > female.score)
+      swap(female, temp);
+  }
+  if (female.score == -1)
+    cout << "Absent" << endl;
+  else
+    cout << female.name << " " << female.id << endl;
+  if (male.score == 101)
+    cout << "Absent" << endl;
+  else
+    cout << male.name << " " << male.id << endl;
+  if (female.score == -1 '' male.score == 101)
+    cout << "NA" << endl;
+  else
+    cout << female.score - male.score;
+  return 0;
+}
 ```

@@ -22,62 +22,62 @@
     }
 
 ## AC代码
-```cpp
-    #include <iostream>
-    #include <map>
-    #include <iomanip>
-    #include <set>
-    using namespace std;
+```cpp linenums="1"
+#include <iostream>
+#include <map>
+#include <iomanip>
+#include <set>
+using namespace std;
 
-    void print(map<string, set<int>> &mapSet, string &query) {
-        if (mapSet.find(query) == mapSet.end())
-            cout << "Not Found\n";
-        else {
-            for (auto &set : mapSet[query])
-                cout << setw(7) << setfill('0') << set << "\n"; // 控制输出位数，以0填充
-        }
-    }
+void print(map<string, set<int>> &mapSet, string &query) {
+  if (mapSet.find(query) == mapSet.end())
+    cout << "Not Found\n";
+  else {
+    for (auto &set : mapSet[query])
+      cout << setw(7) << setfill('0') << set << "\n"; // 控制输出位数，以0填充
+  }
+}
 
-    int main() {
-        ios::sync_with_stdio(false);
-        map<string, set<int>> mapTitle, mapAuthor, mapKey, mapPublisher, mapYear;
-        int n, m, id;
-        string title, author, key, publisher, year;
-        cin >> n;
-        while (n--) {
-            cin >> id; cin.get();
-            getline(cin, title); mapTitle[title].insert(id);
-            getline(cin, author); mapAuthor[author].insert(id);
-            while (cin >> key) {
-                mapKey[key].insert(id);
-                if (cin.peek() == '\n') { // 又学到一招，cin.peek()获取当前位置的字符，可以检测是否读到了行末
-                    cin.get();
-                    break;
-                }
-            }
-            getline(cin, publisher); mapPublisher[publisher].insert(id);
-            getline(cin, year); mapYear[year].insert(id);
-        }
-        cin >> m;
-        int type; string query;
-        while (m--) {
-            cin >> type; cin.get(); cin.get();
-            getline(cin, query);
-            cout << type << ": " << query << endl;
-            switch (type) {
-                case 1:
-                    print(mapTitle, query); break;
-                case 2:
-                    print(mapAuthor, query); break;
-                case 3:
-                    print(mapKey, query); break;
-                case 4:
-                    print(mapPublisher, query); break;
-                case 5:
-                    print(mapYear, query); break;
-                default: break;
-            }
-        }
-        return 0;
+int main() {
+  ios::sync_with_stdio(false);
+  map<string, set<int>> mapTitle, mapAuthor, mapKey, mapPublisher, mapYear;
+  int n, m, id;
+  string title, author, key, publisher, year;
+  cin >> n;
+  while (n--) {
+    cin >> id; cin.get();
+    getline(cin, title); mapTitle[title].insert(id);
+    getline(cin, author); mapAuthor[author].insert(id);
+    while (cin >> key) {
+      mapKey[key].insert(id);
+      if (cin.peek() == '\n') { // 又学到一招，cin.peek()获取当前位置的字符，可以检测是否读到了行末
+        cin.get();
+        break;
+      }
     }
+    getline(cin, publisher); mapPublisher[publisher].insert(id);
+    getline(cin, year); mapYear[year].insert(id);
+  }
+  cin >> m;
+  int type; string query;
+  while (m--) {
+    cin >> type; cin.get(); cin.get();
+    getline(cin, query);
+    cout << type << ": " << query << endl;
+    switch (type) {
+      case 1:
+        print(mapTitle, query); break;
+      case 2:
+        print(mapAuthor, query); break;
+      case 3:
+        print(mapKey, query); break;
+      case 4:
+        print(mapPublisher, query); break;
+      case 5:
+        print(mapYear, query); break;
+      default: break;
+    }
+  }
+  return 0;
+}
 ```

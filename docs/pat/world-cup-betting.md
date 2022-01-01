@@ -9,30 +9,30 @@
 用一个`char`存放结果的字符，重新回顾一下`cout`的精度控制
 
 ## AC代码
-```cpp
-    #include <iostream>
-    #include <vector>
-    #include <iomanip> // 精度控制头文件
-    using namespace std;
+```cpp linenums="1"
+#include <iostream>
+#include <vector>
+#include <iomanip> // 精度控制头文件
+using namespace std;
 
-    char S[3] = {'W', 'T', 'L'};
-    int main() {
-        double ans = 1.0, max;
-        int index;
-        for (int i = 0; i < 3; ++i) {
-            max = 0.0;
-            for (int j = 0; j < 3; ++j) { // 每行分别处理
-                double temp;
-                cin >> temp;
-                if (temp > max) {
-                    max = temp;
-                    index = j;
-                }
-            }
-            ans *= max;
-            cout << S[index] << " ";
-        }
-        cout << setiosflags(ios::fixed) << setprecision(2) << (ans * 0.65 - 1) * 2; // 精度处理格式
-        return 0;
+char S[3] = {'W', 'T', 'L'};
+int main() {
+  double ans = 1.0, max;
+  int index;
+  for (int i = 0; i < 3; ++i) {
+    max = 0.0;
+    for (int j = 0; j < 3; ++j) { // 每行分别处理
+      double temp;
+      cin >> temp;
+      if (temp > max) {
+        max = temp;
+        index = j;
+      }
     }
+    ans *= max;
+    cout << S[index] << " ";
+  }
+  cout << setiosflags(ios::fixed) << setprecision(2) << (ans * 0.65 - 1) * 2; // 精度处理格式
+  return 0;
+}
 ```

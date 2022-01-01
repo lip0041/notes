@@ -12,76 +12,76 @@
 
 注意最后一排人数，按照N - N / K * (N / K - 1)有问题，因为如5/6会当成0，所以要用求余运算更佳。
 
-# AC代码(待优化)
-```cpp
-    #include <iostream>
-    #include <utility>
-    #include <vector>
-    #include <string>
-    #include <algorithm>
-    using namespace std;
+# AC代码
+```cpp linenums="1"
+#include <iostream>
+#include <utility>
+#include <vector>
+#include <string>
+#include <algorithm>
+using namespace std;
 
-    struct Student {
-        int height;
-        string name;
-    };
-    bool cmp(Student s1, Student s2)
-    {
-        if (s1.height == s2.height)
-            return s1.name < s2.name;
-        return s1.height > s2.height ;
+struct Student {
+  int height;
+  string name;
+};
+bool cmp(Student s1, Student s2)
+{
+  if (s1.height == s2.height)
+    return s1.name < s2.name;
+  return s1.height > s2.height ;
+}
+
+int main()
+{
+  int K, N;
+  cin >> K >> N;
+  vector<Student> stu(K);
+  //    for (int i = 0; i < K; ++i)
+  //    {
+  //        int height; string name;
+  //        cin >> name >> height;
+  //        stu.push_back(Student{height, name});
+  //    }
+  for (auto it = stu.begin(); it != stu.end(); ++it)
+    cin >> it->name >> it->height;
+  sort(stu.begin(), stu.end(), cmp);
+
+  vector<vector<string>> rows(N);
+  for (int i = 1; i < N; ++i)
+    rows[i].resize(K / N);
+  rows[0].resize(K / N + K % N); // 取余 note！！！
+
+  int num = 0;
+  for (int i = 0; i < rows.size(); ++i) {
+    int p = num, m = rows[i].size();
+    num += m;
+    int start = m / 2;
+    bool direction = true;
+    rows[i][start] = stu[p].name;
+    for (int j = 1; (p + j) < num; ++j) {
+      if (direction) {
+        start -= j;
+        direction = false;
+      }
+      else {
+        start += j;
+        direction = true;
+      }
+      rows[i][start] = stu[p + j].name;
     }
+  }
 
-    int main()
+  for (int i = 0; i < rows.size(); ++i) {
+    for (int j = 0; j < rows[i].size(); ++j)
     {
-        int K, N;
-        cin >> K >> N;
-        vector<Student> stu(K);
-    //    for (int i = 0; i < K; ++i)
-    //    {
-    //        int height; string name;
-    //        cin >> name >> height;
-    //        stu.push_back(Student{height, name});
-    //    }
-        for (auto it = stu.begin(); it != stu.end(); ++it)
-            cin >> it->name >> it->height;
-        sort(stu.begin(), stu.end(), cmp);
-
-        vector<vector<string>> rows(N);
-        for (int i = 1; i < N; ++i)
-            rows[i].resize(K / N);
-        rows[0].resize(K / N + K % N); // 取余 note！！！
-
-        int num = 0;
-        for (int i = 0; i < rows.size(); ++i) {
-            int p = num, m = rows[i].size();
-            num += m;
-            int start = m / 2;
-            bool direction = true;
-            rows[i][start] = stu[p].name;
-            for (int j = 1; (p + j) < num; ++j) {
-                if (direction) {
-                    start -= j;
-                    direction = false;
-                }
-                else {
-                    start += j;
-                    direction = true;
-                }
-                rows[i][start] = stu[p + j].name;
-            }
-        }
-
-        for (int i = 0; i < rows.size(); ++i) {
-            for (int j = 0; j < rows[i].size(); ++j)
-            {
-                cout << rows[i][j];
-                if (j != rows[i].size() - 1)
-                    cout << " ";
-            }
-            if (i != rows.size() - 1)
-                cout << endl;
-        }
-        return 0;
+      cout << rows[i][j];
+      if (j != rows[i].size() - 1)
+        cout << " ";
     }
-```    
+    if (i != rows.size() - 1)
+      cout << endl;
+  }
+  return 0;
+}
+```

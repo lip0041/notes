@@ -10,24 +10,24 @@
 字符串处理，用好`to_string`。另外，学习了如何在`auto`遍历中判断是最后一个元素
 
 ## AC代码
-```cpp
-    #include <iostream>
-    using namespace std;
+```cpp linenums="1"
+#include <iostream>
+using namespace std;
 
-    char number[11][6] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"};
-    int main() {
-        string str;
-        cin >> str;
-        int sum = 0;
-        for (auto &s : str) {
-            sum += s - '0';
-        }
-        string ans = to_string(sum);
-        for (auto &s : ans) {
-            cout << number[s - '0'];
-            if (&s != &ans.back()) // 判断是否是最后一个元素，比较地址
-                cout << " ";
-        }
-        return 0;
-    }
+char number[11][6] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"};
+int main() {
+  string str;
+  cin >> str;
+  int sum = 0;
+  for (auto &s : str) {
+    sum += s - '0';
+  }
+  string ans = to_string(sum);
+  for (auto &s : ans) {
+    cout << number[s - '0'];
+    if (&s != &ans.back()) // 判断是否是最后一个元素，比较地址
+      cout << " ";
+  }
+  return 0;
+}
 ```

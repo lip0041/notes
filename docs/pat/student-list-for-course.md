@@ -23,37 +23,37 @@
 所以，最终结论是，这道题，`cout`使用`\n`输出换行一样也能过！！！
 
 ## AC代码
-```cpp
-    #include <iostream>
-    #include <vector>
-    #include <algorithm>
-    // #include <cstdio>
-    using namespace std;
+```cpp linenums="1"
+#include <iostream>
+#include <vector>
+#include <algorithm>
+// #include <cstdio>
+using namespace std;
 
-    int main() {
-        int N, K;
-        istream::sync_with_stdio(false); // 关闭同步，时间上会快个约200多ms
-        cin >> N >> K;
-        vector<vector<string>> course(K + 1);
-        for (int i = 0; i < N; ++i) {
-            string name;
-            int num, id;
-            cin >> name >> num;
-            for (int j = 0; j < num; ++j) {
-                cin >> id;
-                course[id].emplace_back(name);
-            }
-        }
-        for (int i = 1; i <= K; ++i) {
-            // printf("%d %d\n", i, course[i].size());
-            cout << i << " " << course[i].size() << "\n";
-            // 同样使用 lambda 表达式，真的很简洁
-            sort(course[i].begin(), course[i].end(), [](string a, string b){ return a < b; }); 
-            for (auto &it : course[i]) {
-                // printf("%s\n", it.c_str()); // c_str() 转换成c语言风格时字符串
-                cout << it << "\n";
-            }
-        }
-        return 0;
+int main() {
+  int N, K;
+  istream::sync_with_stdio(false); // 关闭同步，时间上会快个约200多ms
+  cin >> N >> K;
+  vector<vector<string>> course(K + 1);
+  for (int i = 0; i < N; ++i) {
+    string name;
+    int num, id;
+    cin >> name >> num;
+    for (int j = 0; j < num; ++j) {
+      cin >> id;
+      course[id].emplace_back(name);
     }
-```    
+  }
+  for (int i = 1; i <= K; ++i) {
+    // printf("%d %d\n", i, course[i].size());
+    cout << i << " " << course[i].size() << "\n";
+    // 同样使用 lambda 表达式，真的很简洁
+    sort(course[i].begin(), course[i].end(), [](string a, string b){ return a < b; }); 
+    for (auto &it : course[i]) {
+      // printf("%s\n", it.c_str()); // c_str() 转换成c语言风格时字符串
+      cout << it << "\n";
+    }
+  }
+  return 0;
+}
+```

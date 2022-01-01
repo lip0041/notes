@@ -14,90 +14,90 @@
 详见代码
 
 ## AC代码
-```cpp
-    #include <iostream>
-    #include <vector>
-    #include <queue>
-    using namespace std;
+```cpp linenums="1"
+#include <iostream>
+#include <vector>
+#include <queue>
+using namespace std;
 
-    struct node {
-        int data;
-        struct node *left;
-        struct node *right;
-        struct node *parent; // 方便回溯
-        bool status{false}; // 为true时表示当前节点已被栈操作pop掉，即应当考察其右孩子（如果存在）
-    };
-    int n;
-    vector<int> post; // NOLINT
+struct node {
+  int data;
+  struct node *left;
+  struct node *right;
+  struct node *parent; // 方便回溯
+  bool status{false}; // 为true时表示当前节点已被栈操作pop掉，即应当考察其右孩子（如果存在）
+};
+int n;
+vector<int> post; // NOLINT
 
-    vector<string> op;
-    node* construct() {
-        node *root = new node;
-        root->data = op[0][5] - '0';
-        if (op[0].size() == 7) // 一个坑，n取值可以是两位数，我采用的是字符串的处理方法，所以要考虑到这种情况。
-            root->data = root->data * 10 + op[0][6] - '0';
-        node *temp = root;
-        bool flag = true;
-        for (auto it = op.begin() + 1; it != op.end(); ++it) {
-            if (flag && (*it)[1] == 'u') { // 此时表示temp要接入左孩子
-                node *left = new node;
-                int num = (*it)[5] - '0';
-                if (it->size() == 7)
-                    num = num * 10 + (*it)[6] - '0';
-                left->data = num;
-                temp->left = left;
-                left->parent = temp;
-                temp = temp->left;
-            }
-            else if (flag && (*it)[1] == 'o') { // 表示temp左孩子为空，且temp被pop掉了
-                flag = !flag;
-                temp->status = true;
-                temp->left = nullptr;
-            }
-            else if (!flag && (*it)[1] == 'o') { // 表示temp右孩子为空，且temp的最近一个未被pop的祖父该被pop
-                temp->right = nullptr;
-                temp = temp->parent;
-                while (temp->status) // 找到还未被pop的祖父
-                    temp = temp->parent;
-                temp->status = true; // 将其pop
-            }
-            else if (!flag && (*it)[1] == 'u') { // 表示temp存在右子树，接入
-                flag = !flag;
-                node *right = new node;
-                int num = (*it)[5] - '0';
-                if (it->size() == 7)
-                    num = num * 10 + (*it)[6] - '0';
-                right->data = num;
-                temp->right = right;
-                right->parent = temp;
-                temp = temp->right;
-            }
-        }
-        return root;
+vector<string> op;
+node* construct() {
+  node *root = new node;
+  root->data = op[0][5] - '0';
+  if (op[0].size() == 7) // 一个坑，n取值可以是两位数，我采用的是字符串的处理方法，所以要考虑到这种情况。
+    root->data = root->data * 10 + op[0][6] - '0';
+  node *temp = root;
+  bool flag = true;
+  for (auto it = op.begin() + 1; it != op.end(); ++it) {
+    if (flag && (*it)[1] == 'u') { // 此时表示temp要接入左孩子
+      node *left = new node;
+      int num = (*it)[5] - '0';
+      if (it->size() == 7)
+        num = num * 10 + (*it)[6] - '0';
+      left->data = num;
+      temp->left = left;
+      left->parent = temp;
+      temp = temp->left;
     }
-
-    void traverse(node* &tree) {
-        if (!tree)
-            return;
-        traverse(tree->left);
-        traverse(tree->right);
-        post.emplace_back(tree->data);
+    else if (flag && (*it)[1] == 'o') { // 表示temp左孩子为空，且temp被pop掉了
+      flag = !flag;
+      temp->status = true;
+      temp->left = nullptr;
     }
-
-    int main()
-    {
-        cin  >> n;
-        cin.get();
-        op.resize(2 * n);
-        for (int i = 0; i < 2 * n; ++i)
-            getline(cin, op[i]);
-        node *tree = construct();
-        traverse(tree);
-        for (auto &it : post) {
-            cout << it;
-            if (&it != &post.back())
-                cout << " ";
-        }
-        return 0;
+    else if (!flag && (*it)[1] == 'o') { // 表示temp右孩子为空，且temp的最近一个未被pop的祖父该被pop
+      temp->right = nullptr;
+      temp = temp->parent;
+      while (temp->status) // 找到还未被pop的祖父
+        temp = temp->parent;
+      temp->status = true; // 将其pop
     }
-```    
+    else if (!flag && (*it)[1] == 'u') { // 表示temp存在右子树，接入
+      flag = !flag;
+      node *right = new node;
+      int num = (*it)[5] - '0';
+      if (it->size() == 7)
+        num = num * 10 + (*it)[6] - '0';
+      right->data = num;
+      temp->right = right;
+      right->parent = temp;
+      temp = temp->right;
+    }
+  }
+  return root;
+}
+
+void traverse(node* &tree) {
+  if (!tree)
+    return;
+  traverse(tree->left);
+  traverse(tree->right);
+  post.emplace_back(tree->data);
+}
+
+int main()
+{
+  cin  >> n;
+  cin.get();
+  op.resize(2 * n);
+  for (int i = 0; i < 2 * n; ++i)
+    getline(cin, op[i]);
+  node *tree = construct();
+  traverse(tree);
+  for (auto &it : post) {
+    cout << it;
+    if (&it != &post.back())
+      cout << " ";
+  }
+  return 0;
+}
+```

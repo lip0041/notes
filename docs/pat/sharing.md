@@ -11,35 +11,35 @@
 先遍历一个单词，将其中的字母设为已被访问的状态，然后遍历另一个单词，当碰到已被访问的字母时表明，当前的字母即为所求字母
 
 ## AC代码
-```cpp
-    #include <iostream>
-    #include <iomanip>
-    using namespace std;
+```cpp v
+#include <iostream>
+#include <iomanip>
+using namespace std;
 
-    struct node {
-        int next{};
-        bool status = false;
-    }l[100010];
+struct node {
+  int next{};
+  bool status = false;
+}l[100010];
 
-    int main() {
-        int s1, s2, n;
-        cin >> s1 >> s2 >> n;
-        int address, next;
-        char c;
-        for (int i = 0; i < n; ++i) {
-            cin >> address >> c >> next;
-            l[address].next = next;
-        }
-        int p;
-        for (p = s1; p != -1; p = l[p].next)
-            l[p].status = true;
-        for (p = s2; p != -1; p = l[p].next)
-            if (l[p].status)
-                break;
-        if (p == -1)
-            cout << -1;
-        else
-            cout << setw(5) << setfill('0') << p;
-        return 0;
-    }
+int main() {
+  int s1, s2, n;
+  cin >> s1 >> s2 >> n;
+  int address, next;
+  char c;
+  for (int i = 0; i < n; ++i) {
+    cin >> address >> c >> next;
+    l[address].next = next;
+  }
+  int p;
+  for (p = s1; p != -1; p = l[p].next)
+    l[p].status = true;
+  for (p = s2; p != -1; p = l[p].next)
+    if (l[p].status)
+      break;
+  if (p == -1)
+    cout << -1;
+  else
+    cout << setw(5) << setfill('0') << p;
+  return 0;
+}
 ```
