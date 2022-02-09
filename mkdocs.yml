@@ -73,7 +73,6 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-  logo: icons/penguin.png
   features:
     - content.code.annotate
     - content.tabs.link
