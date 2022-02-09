@@ -14,7 +14,7 @@
 
 ## `vector`代码
 
-```cpp linenums="1"
+```cpp linenums="1"
 #include <iostream>
 #include <vector>
 using namespace std;

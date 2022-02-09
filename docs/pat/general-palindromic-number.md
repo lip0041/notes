@@ -11,7 +11,7 @@ D进制问题+判断回文数
 
 ## AC代码
 
-```cpp linenums="1"
+```cpp linenums="1"
 #include <iostream>
 #include <vector>
 using namespace std;

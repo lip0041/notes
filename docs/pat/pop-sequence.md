@@ -11,7 +11,7 @@
 
 ## AC代码
 
-```cpp linenums="1"
+```cpp linenums="1"
 #include <stack>
 #include <iostream>
 #include <vector>

@@ -13,7 +13,8 @@
 在`codeup`中提交的话会超时，解决办法是将去掉`map`、去掉`cin`改为`scanf`、去掉`cout`改为`printf`以及将`string`改为`char`数组。
 
 ## AC代码
-```cpp linenums="1"
+
+```cpp linenums="1"
 #include <iostream>
 #include <unordered_map>
 #include <algorithm>
